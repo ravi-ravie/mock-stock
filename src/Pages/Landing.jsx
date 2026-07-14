@@ -4,7 +4,7 @@ import HomeLower from '../components/home/HomeLower'
 
 const Landing = () => {
   return (
-    <div>
+    <div className=''>
         <HomeUpper />
         <HomeLower />
     </div>
