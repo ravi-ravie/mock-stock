@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeUpper = () => {
   return (
-    <div className='flex flex-col justify-between gap-4 h-screen bg-slate-300 px-5 py-20'>
+    <div className='flex flex-col justify-between gap-4 h-screen bg-slate-300 main-padding'>
         <div className=''>
             <p><span></span>Market discovery, simplified</p>
 

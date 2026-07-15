@@ -3,7 +3,7 @@ import ExploreCard from '../ui/ExploreCard'
 
 const HomeLower = () => {
   return (
-    <div className='bg-slate-400 px-5 py-20 flex flex-col gap-3'>
+    <div className='bg-slate-400 main-padding flex flex-col gap-3'>
         <p><span></span>Find your focus</p>
 
         <div className=''>

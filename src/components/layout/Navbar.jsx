@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { RiMenu5Fill } from "@remixicon/react";
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -10,11 +11,12 @@ const Navbar = () => {
   return (
     <div className='fixed top-0 left-0 w-full'>
       <div className='flex justify-between'>
+        <Link to='/'>
           <div className='flex'>
               <img src='/src/assets/logoMockStock.png'  alt="" className='size-8'/>
               <h2>mockStock</h2>
           </div>
-
+        </Link>
           <div>
           <RiMenu5Fill onClick={()=>{setBoolSidebar(prev => !prev)}} />
           </div>

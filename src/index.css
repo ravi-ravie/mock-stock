@@ -2,5 +2,8 @@
 
 @theme{
     --color-bg-color : #101112;
+}
 
+.main-padding{
+    @apply  px-5 py-20
 }
