@@ -7,3 +7,7 @@
 .main-padding{
     @apply  px-5 py-20
 }
+
+.pagination{
+    @apply flex gap-4
+}
