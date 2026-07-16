@@ -4,6 +4,7 @@ import Landing from './Pages/Landing'
 import { Route, Routes } from 'react-router-dom'
 import Stock from './Pages/Stock'
 import Crypto from './Pages/Crypto'
+import ETF from './Pages/ETF'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='/' element={<Landing />} /> 
         <Route path='/stock' element={<Stock />} />
         <Route path='/crypto' element={<Crypto />} />
+        <Route path='/etf' element={<ETF />} />
       </Routes>
     </div>
   )

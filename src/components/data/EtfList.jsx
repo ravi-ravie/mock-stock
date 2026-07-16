@@ -2,39 +2,26 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ReactPaginateModule from 'react-paginate';
 const ReactPaginate = ReactPaginateModule.default;
+import etfs from "../data/Etfs_1000.json";
 
+const EtfList = () => {
+    const [page, setPage] = useState(0)
+    const itemsPerPage = 20;
 
-const CryptoList = () => {
-    const [page, setPage] = useState(1)
-    const [coins, setCoins] = useState([])
+    const offset = page * itemsPerPage 
 
-    const API_KEY = import.meta.env.VITE_CRYPTO_API_KEY;
+    const displayEtfs = etfs.slice(offset, offset + itemsPerPage);
 
-    const fetchCrypto = async () => {
-        const result = await axios.get('https://api.coingecko.com/api/v3/coins/markets' , 
-        {
-            params: {vs_currency: 'inr', order: 'market_cap_desc', per_page: 20, page, sparkline: false},
-            headers: { 'x-cg-demo-api-key': API_KEY }
-        })
-        setCoins(result.data)
-        console.log('run')
-        console.log(coins, "and", page)
-    }
-
-    useEffect(()=>{
-      // fetchCrypto();  
-    },[page])
-
+    
     const handlePageClick = (event) => {
-        setPage(event.selected + 1)
-        console.log('page selected : ', event.selected+1);
+        setPage(event.selected )
         
     }
 
   return (
     <div>
-      <ReactPaginate
-          pageCount={811}
+        <ReactPaginate
+          pageCount={Math.ceil(etfs.length/20)}
           pageRangeDisplayed={7}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
@@ -45,32 +32,32 @@ const CryptoList = () => {
       />
 
       <div className='flex flex-col gap-5'>
-        {coins.map((coin, idx) => {
+        {displayEtfs.map((etf, idx) => {
           return (
             
             <div key={idx} className='bg-slate-500'>
 
             <div>
-              <img src={coin.image ?? 'N/A'} className='size-8' alt={coin.name} />
-              <p>{coin.name}</p>
+              <img src={etf.img} className='size-8' alt={etf.name}/>
+              <p>{etf.name}</p>
             </div>
 
             <div>
               <div>
                 <p>SYMBOL</p>
-                <p>{coin.symbol?.toUpperCase() ?? 'N/A'}</p>
+                <p>{etf.symbol?.toUpperCase() ?? 'N/A'}</p>
               </div>
-              <p>{coin.current_price?.toLocaleString('en-IN') ?? 'N/A'}</p>
+              <p>{etf.price_inr?.toLocaleString('en-IN') ?? 'N/A'}</p>
             </div>
 
             <div>
               <div>
                 <p>24H CHANGE</p>
-                <p>{coin.price_change_percentage_24h?.toFixed(2) ?? 'N/A'}</p>
+                <p>{etf.change_24h_percent?.toFixed(2) ?? 'N/A'}</p>
               </div>
 
               <p>MARKET CAP</p>
-              <p>{coin.market_cap?.toLocaleString('en-IN', {
+              <p>{etf.market_cap_inr?.toLocaleString('en-IN', {
                 notation: "compact",
                 maximumFractionDigits: 2,
               }) ?? 'N/A'}</p>
@@ -81,10 +68,9 @@ const CryptoList = () => {
         })}
       </div>
 
-
-      <h2>Current page: {page}</h2>
+      <h2>Current page: {page+1}</h2>
       <ReactPaginate
-          pageCount={27}
+          pageCount={Math.ceil(etfs.length/20)}
           pageRangeDisplayed={7}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
@@ -97,4 +83,4 @@ const CryptoList = () => {
   )
 }
 
-export default CryptoList
+export default EtfList
