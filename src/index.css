@@ -22,7 +22,7 @@
 }
 
 .main-padding{
-    @apply  px-5 py-20
+    @apply  px-8 pt-30
 }
 
 .pagination{
@@ -62,9 +62,17 @@ body{
 
 .line-deco{
     display: inline-block;
-    width: 30px;
+    width: 36px;
     height: 2px;
-    background: #d7ae67;
+    margin-bottom: 3px;
+    background: var(--color-gold);
+}
+
+.vertical-line-deco{
+    display: inline-block;
+    height: 45px;
+    width: 2px;
+    background: var(--color-gold);
 }
 
 .navLink{
@@ -76,9 +84,6 @@ body{
     letter-spacing: 1px
 }
 
-.parent-nav {
-    overflow: hidden;
-}
 
 .parent-nav > a {
     display: block;
@@ -90,8 +95,8 @@ body{
 .parent-nav > a:nth-child(1) { animation-delay: 0s; }
 .parent-nav > a:nth-child(2) { animation-delay: 0.2s; }
 .parent-nav > a:nth-child(3) { animation-delay: 0.4s; }
-.parent-nav > a:nth-child(4) { animation-delay: 0.8s; }
-.parent-nav > a:nth-child(5) { animation-delay: 1.0s; }
+.parent-nav > a:nth-child(4) { animation-delay: 0.6s; }
+.parent-nav > a:nth-child(5) { animation-delay: 0.8s; }
 
 @keyframes slideIn {
     from {
@@ -102,4 +107,81 @@ body{
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+
+.lines {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.chart-position {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+    z-index: -50;
+}
+
+.line {
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+    animation: draw 5s ease-out forwards;
+}
+
+.gray {
+    stroke: #555c63;
+}
+
+.red {
+    stroke: #a56b5d;
+    animation-delay: .25s;
+}
+
+.gold {
+    stroke: #d3a85f;
+    animation-delay: .5s;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.mountains {
+    position: absolute;
+    bottom: -1px;
+    width: 120%;
+    left: -10%;
+    z-index: -100;
+}
+
+.mountain-far {
+    height: 48%;
+    background: linear-gradient(135deg, #36414a, #161d22 70%);
+    opacity: .46;
+    bottom: 7%;
+    filter: blur(1px);
+    clip-path: polygon(0 70%, 8% 52%, 16% 63%, 24% 45%, 33% 60%, 42% 38%, 50% 55%, 59% 33%, 67% 58%, 76% 40%, 84% 62%, 92% 36%, 100% 58%, 100% 100%, 0 100%);
+}
+
+.mountain-mid {
+    height: 45%;
+    background: linear-gradient(140deg, #293037, #15191c 68%);
+    opacity: .78;
+    bottom: -2%;
+    clip-path: polygon(0 76%, 8% 50%, 15% 62%, 25% 40%, 34% 65%, 46% 30%, 53% 49%, 60% 23%, 67% 55%, 75% 42%, 85% 17%, 92% 45%, 100% 28%, 100% 100%, 0 100%);
+}
+
+.mountain-near {
+    height: 30%;
+    background: linear-gradient(140deg, #16191b, #080909 83%);
+    clip-path: polygon(0 58%, 7% 34%, 14% 67%, 22% 53%, 29% 72%, 39% 25%, 49% 65%, 57% 49%, 66% 77%, 74% 30%, 83% 55%, 92% 19%, 100% 54%, 100% 100%, 0 100%);
 }
