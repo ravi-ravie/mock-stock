@@ -32,6 +32,8 @@ const CryptoList = () => {
 
   return (
     <div>
+
+      <p>15000+ assets</p>
       <ReactPaginate
           pageCount={813}
           pageRangeDisplayed={7}

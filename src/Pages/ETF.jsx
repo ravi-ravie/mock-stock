@@ -7,7 +7,7 @@ const ETF = () => {
   return (
      <div className='main-padding'>
         <div className='flex flex-col gap-3'>
-            <PageTopCard label='Digital assets' title='Crypto market.' subtitle='Follow the currencies and protocols defining the next financial frontier.' />
+            <PageTopCard label='Diversified funds' title='ETF market' subtitle='Build a wider view of the world through a single, considered investment.' />
             <SearchBar asset='crypto' />
         </div>
 

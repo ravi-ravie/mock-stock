@@ -20,6 +20,8 @@ const EtfList = () => {
 
   return (
     <div>
+
+        <p>{etfs.length} assets</p>
         <ReactPaginate
           pageCount={Math.ceil(etfs.length/20)}
           pageRangeDisplayed={7}

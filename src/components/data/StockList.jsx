@@ -21,6 +21,8 @@ const StockList = () => {
 
   return (
     <div>
+
+      <p>{stocks.length} assets</p>
       <ReactPaginate
           pageCount={Math.ceil(stocks.length/20)}
           pageRangeDisplayed={7}
@@ -37,7 +39,6 @@ const StockList = () => {
           return (
             
             <div key={idx} className='bg-slate-500'>
-
             <div>
               <img src={stock.img} className='size-8' alt={stock.name}/>
               <p>{stock.name}</p>

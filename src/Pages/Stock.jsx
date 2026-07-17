@@ -7,7 +7,7 @@ const Stock = () => {
   return (
     <div className='main-padding'>
         <div className='flex flex-col gap-3'>
-            <PageTopCard label='Diversified funds' title='Stock market' subtitle='Build a wider view of the world through a single, considered investment.' />
+            <PageTopCard label='Market directory' title='Stock market' subtitle='Discover established companies and the ideas moving global markets.' />
             <SearchBar asset='stock' />
         </div>
         <div>
