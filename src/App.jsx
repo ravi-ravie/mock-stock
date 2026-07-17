@@ -10,7 +10,7 @@ import AboutMe from './Pages/AboutMe'
 
 const App = () => {
   return (
-    <div className=''>
+    <div className='text-white'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Landing />} /> 

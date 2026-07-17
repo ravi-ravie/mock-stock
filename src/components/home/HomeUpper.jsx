@@ -2,9 +2,9 @@ import React from 'react'
 
 const HomeUpper = () => {
   return (
-    <div className='flex flex-col justify-between gap-4 h-screen bg-slate-300 main-padding'>
+    <div className='flex flex-col justify-between gap-4 h-screen  main-padding'>
         <div className=''>
-            <p><span></span>Market discovery, simplified</p>
+            <p className='flex items-center gap-4'><span className='line-deco'></span>Market discovery, simplified</p>
 
             <div className=''>
                 <h1>Markets, in <br/> your rhythm.</h1>
@@ -18,6 +18,7 @@ const HomeUpper = () => {
         </div>
 
         <p><span></span>SCROLL TO EXPLORE</p>
+        <div className='upper-glow'></div>
     </div>
   )
 }

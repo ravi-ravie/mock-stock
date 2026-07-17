@@ -1,7 +1,24 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @theme{
     --color-bg-color : #101112;
+    --color-lightGold: #efd39b;
+    --color-gold: #d7ae67;
+    --font-sans : 'DM Sans';
+    --font-mono : 'DM Mono';
+    --font-display : 'Playfair Display';
+}
+
+:root{
+    --font-sans : 'DM Sans';
+    --font-mono : 'DM Mono';
+    --font-display : 'Playfair Display';
+}
+
+*{
+    margin: 0
 }
 
 .main-padding{
@@ -10,4 +27,79 @@
 
 .pagination{
     @apply flex gap-4
+}
+
+
+body{
+    background-color: #101112
+}
+.navbar.scrolled{
+    background: rgba(16, 17, 18, 0.9);
+    border-color: var(--line);
+    backdrop-filter: blur(18px);
+}
+
+
+
+.upper-glow{
+    position: absolute;
+    width: 165vw;
+    height: 165vw;
+    right: -40vw;
+    top: -105vw;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(216, 174, 103, 0.35) 0%,
+        rgba(216, 174, 103, 0.2) 15%,
+        rgba(255, 255, 255, 0.15) 30%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 100%
+    );
+    z-index: -2;
+    filter: blur(20px); 
+}
+
+.line-deco{
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: #d7ae67;
+}
+
+.navLink{
+    padding: 1.75rem 1.5rem 0.5rem;
+    background: rgba(16, 17, 18, 0.97);
+    backdrop-filter: blur(18px);
+    font-size: 1.4rem;
+    color: #cccac4;
+    letter-spacing: 1px
+}
+
+.parent-nav {
+    overflow: hidden;
+}
+
+.parent-nav > a {
+    display: block;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.4s ease forwards;
+}
+
+.parent-nav > a:nth-child(1) { animation-delay: 0s; }
+.parent-nav > a:nth-child(2) { animation-delay: 0.2s; }
+.parent-nav > a:nth-child(3) { animation-delay: 0.4s; }
+.parent-nav > a:nth-child(4) { animation-delay: 0.8s; }
+.parent-nav > a:nth-child(5) { animation-delay: 1.0s; }
+
+@keyframes slideIn {
+    from {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
