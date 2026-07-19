@@ -5,82 +5,87 @@ const ReactPaginate = ReactPaginateModule.default;
 import stocks from "../data/stocks_1000.json";
 
 const StockList = () => {
-    const [page, setPage] = useState(0)
-    const itemsPerPage = 20;
+  const [page, setPage] = useState(0)
+  const itemsPerPage = 20;
 
-    const offset = page * itemsPerPage 
+  const offset = page * itemsPerPage
 
-    const displayStocks = stocks.slice(offset, offset + itemsPerPage);
+  const displayStocks = stocks.slice(offset, offset + itemsPerPage);
 
-    
-    const handlePageClick = (event) => {
-        setPage(event.selected )
-        
-    }
+
+  const handlePageClick = (event) => {
+    setPage(event.selected)
+
+  }
 
 
   return (
     <div>
 
-      <p>{stocks.length} assets</p>
-      <ReactPaginate
-          pageCount={Math.ceil(stocks.length/20)}
-          pageRangeDisplayed={7}
+      <div className='flex justify-between items-center my-6'>
+        <p className='text-[0.625rem] text-[#8f8e87] tracking-widest ml-1'>{stocks.length} assets</p>
+        <ReactPaginate
+          pageCount={Math.ceil(stocks.length / 20)}
+          pageRangeDisplayed={2}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
           containerClassName="pagination"
           activeClassName="active"
           previousLabel="←"
           nextLabel="→"
-      />
+          breakLabel={null}
+          forcePage={page-1}
 
+        />
+      </div>
+      
       <div className='flex flex-col gap-5'>
         {displayStocks.map((stock, idx) => {
           return (
-            
-            <div key={idx} className='bg-slate-500'>
-            <div>
-              <img src={stock.img} className='size-8' alt={stock.name}/>
-              <p>{stock.name}</p>
-            </div>
 
-            <div>
-              <div>
-                <p>SYMBOL</p>
-                <p>{stock.symbol?.toUpperCase() ?? 'N/A'}</p>
-              </div>
-              <p>{stock.price_inr?.toLocaleString('en-IN') ?? 'N/A'}</p>
-            </div>
+            <div key={idx} className='grid grid-cols-[minmax(0,1fr)_auto] gap-y-2.5 p-3.5 sm:p-4 border border-white/11 bg-[#191a1b] hover:bg-[#202123] hover:shadow-[inset_2px_0_0_var(--color-gold)] cursor-pointer'>
 
-            <div>
-              <div>
-                <p>24H CHANGE</p>
-                <p>{stock.change_24h_percent?.toFixed(2) ?? 'N/A'}</p>
+              <div className='col-span-2 flex items-center gap-2.5'>
+                <img src={stock.img} className='size-8 rounded-full object-cover' alt={stock.name} />
+                <p className='font-semibold text-[#f1eee8]'>{stock.name}</p>
               </div>
 
-              <p>MARKET CAP</p>
-              <p>{stock.market_cap_inr?.toLocaleString('en-IN', {
-                notation: "compact",
-                maximumFractionDigits: 2,
-              }) ?? 'N/A'}</p>
-            </div>
+              <div className='col-start-1 row-start-2'>
+                <p className='mb-0.75 text-[#818078] font-mono text-[9px] tracking-[0.8px]'>SYMBOL</p>
+                <p className='font-mono text-[11px] text-[#a8a7a0]'>{stock.symbol?.toUpperCase() ?? 'N/A'}</p>
+              </div>
 
-          </div>
+              <p className='col-start-2 row-start-2 text-right font-mono text-[#ece9e1]'>₹{stock.price_inr?.toLocaleString('en-IN') ?? 'N/A'}</p>
+
+              <div className='col-start-1 row-start-3'>
+                <p className='mb-0.75 text-[#818078] font-mono text-[9px] tracking-[0.8px]'>24H CHANGE</p>
+                <p className={`font-mono text-[11px] font-medium ${stock.change_24h_percent>0 ? 'text-[#92af8a]' : 'text-[#c87966]'}`}>{stock.change_24h_percent?.toFixed(2) ?? 'N/A'}%</p>
+              </div>
+
+              <div className='col-start-2 row-start-3 text-right'>
+                <p className='mb-0.75 text-[#818078] font-mono text-[9px] tracking-[0.8px]'>MARKET CAP</p>
+                <p className='font-mono text-[10px] text-[#aaa9a2]'>₹{stock.market_cap_inr?.toLocaleString('en-IN', { notation: "compact", maximumFractionDigits: 2 }) ?? 'N/A'}</p>
+              </div>
+
+            </div>
           )
         })}
       </div>
 
-      <h2>Current page: {page+1}</h2>
-      <ReactPaginate
-          pageCount={Math.ceil(stocks.length/20)}
-          pageRangeDisplayed={7}
+      <div className='my-6  flex justify-center'>
+        <ReactPaginate
+          pageCount={Math.ceil(stocks.length / 20)}
+          pageRangeDisplayed={2}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
-          containerClassName="pagination"
+          containerClassName="pagination new"
           activeClassName="active"
           previousLabel="←"
           nextLabel="→"
-      />
+          breakLabel='...'
+          forcePage={page-1}
+        />
+      </div>
     </div>
   )
 }

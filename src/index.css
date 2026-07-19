@@ -15,10 +15,13 @@
     --font-sans : 'DM Sans';
     --font-mono : 'DM Mono';
     --font-display : 'Playfair Display';
+    --color-bg-color : #101112;
+    --color-lightGold: #efd39b;
+    --color-gold: #d7ae67;
 }
 
-*{
-    margin: 0
+.golditalic{
+    @apply text-lightGold italic;
 }
 
 .main-padding{
@@ -29,10 +32,6 @@
     @apply transition-colors duration-200 hover:text-[#f4f0e8] active:border-l-2 border-l-gold 
 }
 
-
-.pagination{
-    @apply flex gap-4
-}
 
 
 body{
@@ -55,10 +54,10 @@ body{
     border-radius: 50%;
     background: radial-gradient(
         circle,
-        rgba(216, 174, 103, 0.35) 0%,
-        rgba(216, 174, 103, 0.2) 15%,
-        rgba(255, 255, 255, 0.15) 30%,
-        rgba(255, 255, 255, 0.08) 50%,
+        rgba(239, 211, 155, 0.3) 0%,
+        rgba(239, 211, 155, 0.18) 15%,
+        rgba(239, 211, 155, 0.1) 30%,
+        rgba(239, 211, 155, 0.05) 50%,
         transparent 100%
     );
     z-index: -2;
@@ -68,7 +67,7 @@ body{
 .line-deco{
     display: inline-block;
     width: 19px;
-    height: 2px;
+    height: 1px;
     margin-bottom: 3px;
     background: var(--color-gold);
 }
@@ -83,12 +82,14 @@ body{
 /* sidebar */
 
 .navLink{
-    padding: 1.75rem 1.5rem 0.5rem;
+    padding: 1.2rem 1.5rem;
     background: rgba(16, 17, 18, 0.97);
     backdrop-filter: blur(18px);
     font-size: 0.85rem;
     color: #cccac4;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    display: flex;
+    justify-items: center;
 }
 
 
@@ -116,7 +117,7 @@ body{
 .parent-nav.open > a {
     opacity: 0;
     transform: translateX(100%);
-    animation: slideIn 0.4s ease-in-out forwards;
+    animation: slideIn 0.25s ease-in-out forwards;
 }
 
 
@@ -226,4 +227,56 @@ body{
     height: 30%;
     background: linear-gradient(140deg, #16191b, #080909 83%);
     clip-path: polygon(0 58%, 7% 34%, 14% 67%, 22% 53%, 29% 72%, 39% 25%, 49% 65%, 57% 49%, 66% 77%, 74% 30%, 83% 55%, 92% 19%, 100% 54%, 100% 100%, 0 100%);
+}
+
+
+/* pagination */
+
+.pagination{
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    max-width: 100vw;
+}
+
+.pagination li{
+    height: 31px;
+    min-width: 31px;
+}
+
+.pagination li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 8px;
+    border: 1px solid rgba(255,255,255,.11);
+    background: transparent;
+    color: #bdbbb4;
+    font: 11px var(--font-mono);
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.pagination li a:hover{
+    border-color: var(--color-gold);
+    color: var(--color-lightGold);
+}
+
+.pagination li.active a{
+    background: var(--color-gold);
+    color: #171510;
+    border-color: var(--color-gold);
+}
+
+.pagination li.disabled a{
+    opacity: .28;
+    cursor: not-allowed;
+}
+
+.pagination.new{
+    margin-left: 0;
 }

@@ -8,7 +8,7 @@ const HomeUpper = () => {
             <p className='flex items-center gap-4 text-lightGold text-[0.625rem] tracking-[2px] [word-spacing:5px] uppercase'><span className='line-deco'></span>Market discovery, simplified</p>
 
             <div className='flex flex-col gap-3'>
-                <h1 className='text-5xl font-semibold font-display'>Markets, in <br/><span className='text-lightGold italic'>your rhythm.</span></h1>
+                <h1 className='text-5xl font-semibold font-display'>Markets, in <br/><span className='golditalic'>your rhythm.</span></h1>
                 <p className='text-sm text-[#c7c7c1] leading-8 font-sans'>Explore the assets shaping tomorrow with a clearer, calmer view of the market.</p>
             </div>
 
@@ -19,8 +19,8 @@ const HomeUpper = () => {
         </div>
 
         <p className='flex gap-3 [word-spacing:3px] items-center text-[#b8b7b2] tracking-[1.2px] text-[0.625rem] '><span className='vertical-line-deco'></span>SCROLL TO EXPLORE</p>
+        
         <div className='upper-glow'></div>
-
 
         <svg className="lines chart-position" viewBox="0 0 1440 690" preserveAspectRatio="none" aria-hidden="true">
             <path className="line red" d="M-20 394 C88 345 135 428 228 374 S382 419 493 306 S677 395 776 285 S935 376 1047 278 S1224 347 1460 170"></path>
