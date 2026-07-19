@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Sidebar = (props) => {
+  
   return (
-    <div className = {`parent-nav overflow-hidden w-full ${props.boolSidebar ? "open" : "close"}`}>
+    <div className = {`parent-nav overflow-hidden w-full ${props.clicked ?  props.boolSidebar ? "open" : "close" : '-translate-x-full'}`}>
 
         <Link to='/crypto'><p className='navLink'>Crypto</p></Link>
         <Link to='/stock'><p className='navLink'>Stock</p></Link>

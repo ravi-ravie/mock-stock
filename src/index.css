@@ -35,7 +35,7 @@ body{
 }
 .navbar.scrolled{
     background: rgba(16, 17, 18, 0.9);
-    border-color: var(--line);
+    border-color: rgba(255,255,255,.11);
     backdrop-filter: blur(18px);
 }
 
@@ -62,7 +62,7 @@ body{
 
 .line-deco{
     display: inline-block;
-    width: 36px;
+    width: 20px;
     height: 2px;
     margin-bottom: 3px;
     background: var(--color-gold);
@@ -70,8 +70,8 @@ body{
 
 .vertical-line-deco{
     display: inline-block;
-    height: 45px;
-    width: 2px;
+    height: 30px;
+    width: 1px;
     background: var(--color-gold);
 }
 
@@ -106,28 +106,24 @@ body{
     display: block;
 }
 
-/* Opening */
 .parent-nav.open > a {
     opacity: 0;
     transform: translateX(100%);
-    animation: slideIn 0.4s ease forwards;
+    animation: slideIn 0.4s ease-in-out forwards;
 }
 
-/* Closing */
 .parent-nav.close > a {
     opacity: 1;
     transform: translateX(0);
     animation: slideOut 0.4s ease forwards;
 }
 
-/* Open delays (top → bottom) */
 .parent-nav.open > a:nth-child(1) { animation-delay: 0s; }
 .parent-nav.open > a:nth-child(2) { animation-delay: .2s; }
 .parent-nav.open > a:nth-child(3) { animation-delay: .4s; }
 .parent-nav.open > a:nth-child(4) { animation-delay: .6s; }
 .parent-nav.open > a:nth-child(5) { animation-delay: .8s; }
 
-/* Close delays (bottom → top) */
 .parent-nav.close > a:nth-child(5) { animation-delay: 0s; }
 .parent-nav.close > a:nth-child(4) { animation-delay: .2s; }
 .parent-nav.close > a:nth-child(3) { animation-delay: .4s; }
@@ -174,24 +170,26 @@ body{
 
 .line {
     fill: none;
-    stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 2500;
     stroke-dashoffset: 2500;
-    animation: draw 5s ease-out forwards;
+    animation: draw 4s ease-out forwards;
 }
 
 .gray {
+    stroke-width: .8;
     stroke: #555c63;
 }
 
 .red {
+    stroke-width: 1;
     stroke: #a56b5d;
     animation-delay: .25s;
 }
 
 .gold {
+    stroke-width: 1.2;
     stroke: #d3a85f;
     animation-delay: .5s;
 }
@@ -223,10 +221,9 @@ body{
 }
 
 .mountain-mid {
-    height: 45%;
+    height: 41%;
     background: linear-gradient(140deg, #293037, #15191c 68%);
     opacity: .78;
-    bottom: -2%;
     clip-path: polygon(0 76%, 8% 50%, 15% 62%, 25% 40%, 34% 65%, 46% 30%, 53% 49%, 60% 23%, 67% 55%, 75% 42%, 85% 17%, 92% 45%, 100% 28%, 100% 100%, 0 100%);
 }
 
