@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [boolSidebar, setBoolSidebar] = useState(false);
   const [scrolled, setScrolled] = useState(false)
-  const [clicked, setClicked] = useState(false)
 
   useEffect(()=>{
 
@@ -20,7 +19,7 @@ const Navbar = () => {
   },[])
 
   return (
-    <nav className='fixed top-px left-0 w-full z-100 flex flex-col gap-0.5 font-sans'>
+    <nav className='fixed top-px  left-0 w-full z-100 flex flex-col gap-0.5 font-sans'>
       <div className={`${scrolled? 'navbar scrolled' : 'navbar'} flex justify-between items-center py-2 pl-3 pr-6`}>
         <Link to='/'>
           <div className='flex items-center'>
@@ -29,11 +28,11 @@ const Navbar = () => {
           </div>
         </Link>
           <div>
-          <RiMenu4Fill size={25} color='#c0beb6' onClick={()=>{setBoolSidebar(prev => !prev) ; setClicked(true)}} />
+          <RiMenu4Fill size={25} color='#c0beb6' onClick={()=>{setBoolSidebar(prev => !prev)}} />
           </div>
       </div>
 
-      <Sidebar boolSidebar={boolSidebar} clicked={clicked}  />
+      <Sidebar boolSidebar={boolSidebar}  />
     </nav>
   )
 }

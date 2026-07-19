@@ -3,11 +3,11 @@ import {RiArrowRightUpLongFill, RiPlayFill} from '@remixicon/react'
 
 const HomeUpper = () => {
   return (
-    <div className='flex flex-col justify-between  pb-10 relative min-h-screen main-padding font-mono' >
+    <div className='flex flex-col justify-between overflow-hidden  pb-10 relative min-h-screen main-padding font-mono' >
         <div className='flex flex-col gap-5 pt-0'>
-            <p className='flex items-center gap-4 text-lightGold text-[0.6rem] tracking-[2px] [word-spacing:5px] uppercase'><span className='line-deco'></span>Market discovery, simplified</p>
+            <p className='flex items-center gap-4 text-lightGold text-[0.625rem] tracking-[2px] [word-spacing:5px] uppercase'><span className='line-deco'></span>Market discovery, simplified</p>
 
-            <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-3'>
                 <h1 className='text-5xl font-semibold font-display'>Markets, in <br/><span className='text-lightGold italic'>your rhythm.</span></h1>
                 <p className='text-sm text-[#c7c7c1] leading-8 font-sans'>Explore the assets shaping tomorrow with a clearer, calmer view of the market.</p>
             </div>
