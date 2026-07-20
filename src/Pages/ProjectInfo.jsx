@@ -3,18 +3,19 @@ import ProjectCard from '../components/ui/ProjectCard'
 
 const ProjectInfo = () => {
   return (
-    <div className='main-padding'>
-        <div>
-            <p>BEHIND MOCKSTOCK</p>
-            <h1>A calmer way to <br/> read the market.</h1>
-            <p>mockStock is a concept platform that turns a sea of market data into an inviting place to discover what matters.</p>
+    <div className='px-4 pt-20 pb-15 flex flex-col gap-12' >
+        <div className='flex flex-col gap-4'>
+            <p className='flex items-center gap-4 text-lightGold text-[0.625rem] tracking-[2px] [word-spacing:5px] uppercase'><span className='line-deco'></span>BEHIND MOCKSTOCK</p>
+            <h1 className='text-[2.875rem] leading-12 tracking-tighter font-semibold font-display'>A calmer way to <span className='golditalic'>read the market.</span></h1>
+            <p className='leading-7 text-[#bbb9b1] text-base max-w-130'>mockStock is a personal project built to strengthen my React fundamentals - component structure, state, and working with real data.</p>
         </div>
 
-        <div className='flex flex-col gap-5'>
-            <ProjectCard num={1} title='What it is' subtitle='mA focused market explorer for stocks, crypto, and ETFs.'/>
-            <ProjectCard num={2} title='Built with' subtitle='Modern web technologies, purposeful interaction, and a human point of view.'/>
-            <ProjectCard num={3} title='Data, someday' subtitle='A live market-data layer can bring this considered interface to life.'/>
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5'>
+            <ProjectCard num={1} title='What it is' subtitle='A market explorer for stocks, crypto, and ETFs.'/>
+            <ProjectCard num={2} title='Built with' subtitle='React, Tailwind CSS, and react-paginate for handling pagination across large datasets.'/>
+            <ProjectCard num={3} title='The data' subtitle='Crypto prices come live from the CoinGecko API. Stock and ETF data is sourced from local JSON files.'/>
         </div>
+        <div className='upper-glow'></div>
     </div>
   )
 }

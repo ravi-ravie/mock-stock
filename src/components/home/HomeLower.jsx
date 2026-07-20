@@ -6,7 +6,7 @@ import etfImg from '../../assets/etf.png'
 
 const HomeLower = () => {
   return (
-    <div className=' px-8 py-20 flex flex-col gap-3'>
+    <div className=' px-4 pt-18 pb-15  flex flex-col gap-3'>
         <p className='flex items-center gap-4 text-lightGold text-[0.625rem] tracking-[2px] [word-spacing:5px] font-mono uppercase'><span className='line-deco'></span>Find your focus</p>
 
         <div className='flex flex-col gap-3'>
