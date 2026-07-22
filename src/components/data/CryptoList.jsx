@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ReactPaginateModule from 'react-paginate';
+import SearchBar from '../ui/SearchBar';
 const ReactPaginate = ReactPaginateModule.default;
 
 
@@ -27,28 +28,35 @@ const CryptoList = () => {
 
     const handlePageClick = (event) => {
         setPage(event.selected + 1)
-        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
   return (
     <div>
 
-      <div className='flex justify-between items-center my-6'>
-        <p className='text-[0.625rem] text-[#8f8e87] tracking-widest ml-1'>15000+ assets</p>
+      <div className='flex flex-col gap-6 md:flex-row md:justify-between my-6'>
+          <div className='flex items-center gap-4'>
+          <SearchBar asset='stock' />
+          <p className='text-[0.688rem] text-[#8f8e87] hidden md:flex  tracking-widest ml-1'>15000+ assets</p>
+        </div>
+        <div className='flex items-center'>
+        <p className='text-[0.688rem] text-[#8f8e87] md:hidden tracking-widest ml-1'>15000+ assets</p>
         <ReactPaginate
           pageCount={813}
-          pageRangeDisplayed={2}
+          pageRangeDisplayed={3}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
           containerClassName="pagination"
           activeClassName="active"
-          previousLabel="←"
-          nextLabel="→"
+          previousLabel={null}
+          nextLabel={null}
           breakLabel={null}
           forcePage={page-1}
-
+          previousClassName="hidden-arrow"
+          nextClassName="hidden-arrow"
         />
-      </div>
+        </div>
+        </div>
 
       <div className='flex flex-col gap-5'>
         {coins.map((coin, idx) => {
@@ -87,14 +95,14 @@ const CryptoList = () => {
      <div className='my-6  flex justify-center'>
         <ReactPaginate
           pageCount={813}
-          pageRangeDisplayed={2}
+          pageRangeDisplayed={5}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
           containerClassName="pagination new"
           activeClassName="active"
           previousLabel="←"
           nextLabel="→"
-          breakLabel='...'
+          breakLabel={null}
           forcePage={page-1}
 
         />

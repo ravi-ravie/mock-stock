@@ -9,7 +9,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation();
 
-  console.log(location);
   
   useEffect(()=>{
 
