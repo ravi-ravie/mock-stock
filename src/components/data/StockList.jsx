@@ -26,7 +26,7 @@ const StockList = () => {
       <div className='flex flex-col gap-6 md:flex-row md:justify-between my-6'>
         <div className='flex items-center gap-4'>
           <SearchBar asset='stock' />
-          <p className='text-[0.688rem] text-[#8f8e87] hidden md:flex  tracking-widest ml-1'>{stocks.length} assets</p>
+          <p className='text-[0.688rem] text-[#8f8e87] hidden md:flex text-nowrap tracking-widest ml-1'>{stocks.length} assets</p>
         </div>
         <div className='flex items-center'>
         <p className='text-[0.688rem] text-[#8f8e87] md:hidden tracking-widest ml-1'>{stocks.length} assets</p>
@@ -88,7 +88,6 @@ const StockList = () => {
   </table>
 </div>
 
-{/* mobile cards */}
 <div className='flex flex-col gap-2.5 md:hidden'>
   {displayStocks.map((stock, idx) => (
     <div key={idx} className='grid grid-cols-[minmax(0,1fr)_auto] gap-y-2.5 p-3.5 border border-white/11 bg-[#191a1b] hover:bg-[#202123] hover:shadow-[inset_2px_0_0_var(--color-gold)] cursor-pointer'>
