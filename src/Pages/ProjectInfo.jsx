@@ -3,7 +3,7 @@ import ProjectCard from '../components/ui/ProjectCard'
 
 const ProjectInfo = () => {
   return (
-    <div className='px-4 pt-20 pb-15 flex flex-col gap-12' >
+    <div className='px-4 pt-20 pb-15 flex flex-col gap-12 relative overflow-hidden' >
         <div className='flex flex-col gap-4'>
             <p className='flex items-center gap-4 text-lightGold text-[0.625rem] tracking-[2px] [word-spacing:5px] uppercase'><span className='line-deco'></span>BEHIND MOCKSTOCK</p>
             <h1 className='text-[2.875rem] leading-12 tracking-tighter font-semibold font-display'>A calmer way to <span className='golditalic'>read the market.</span></h1>

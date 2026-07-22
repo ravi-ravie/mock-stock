@@ -3,7 +3,7 @@ import { RiArrowRightUpLongFill } from "@remixicon/react";
 
 const AboutMe = () => {
   return (
-    <div className='px-4 pt-20 pb-15 flex flex-col gap-10'>
+    <div className='px-4 pt-20 pb-15 flex flex-col gap-10 relative overflow-hidden'>
         <div className='flex flex-col gap-4'>
             <p className='flex items-center gap-4 text-lightGold text-[0.625rem] tracking-[2px] [word-spacing:5px] uppercase'><span className='line-deco'></span>A little about me</p>
             <h1 className='text-[2.875rem] leading-12 tracking-tighter font-semibold font-display'>Made with <br/><span className='golditalic'>curiosity.</span></h1>

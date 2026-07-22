@@ -92,7 +92,22 @@ body{
     justify-items: center;
 }
 
+.navAfterEffect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 1px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s;
+}
 
+.navAfterEffect.active::after {
+    transform: scaleX(1)
+}
 
 .parent-nav {
     background: transparent;
