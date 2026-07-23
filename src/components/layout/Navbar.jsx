@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { RiMenu4Fill } from "@remixicon/react";
 import Sidebar from './Sidebar';
 import { Link, useLocation } from 'react-router-dom';
-import cryptoImg from '../../assets/logoMockStock.png'
+import logoMockStock from '../../assets/logoMockStock.png'
 
 
 const Navbar = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className={`${scrolled? 'navbar scrolled' : 'navbar'} ${location.pathname !== '/' ? 'navbar scrolled' : ''} flex justify-between items-center sm:px-10 py-2 pl-3 pr-6`}>
         <Link to='/'>
           <div className='flex items-center'>
-              <img src='/src/assets/logoMockStock.png'  alt="" className='size-12'/>
+              <img src={logoMockStock}  alt="" className='size-12'/>
               <h2 className='flex justify-center font-bold text-xl sm:text-2xl '>mock<span className='text-lightGold'>Stock</span></h2>
           </div>
         </Link>
