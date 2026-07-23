@@ -172,7 +172,7 @@ body{
     left: 50%;
     width: 100%;
     max-width: 100vw;
-    transform: translate(-50%, -50%) rotate(10deg) ;
+    transform: translate(-50%, -50%) rotate(0deg) ;
     transform-origin: center;
     z-index: -50;
     overflow: hidden;

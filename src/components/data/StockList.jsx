@@ -9,7 +9,7 @@ const StockList = () => {
   const [page, setPage] = useState(1)
   const itemsPerPage = 20;
 
-  const offset = page * itemsPerPage
+  const offset = (page-1) * itemsPerPage
 
   const displayStocks = stocks.slice(offset, offset + itemsPerPage);
 
@@ -23,15 +23,15 @@ const StockList = () => {
   return (
     <div>
 
-      <div className='flex flex-col gap-6 md:flex-row md:justify-between my-6'>
+      <div className='flex flex-col gap-6 sm:flex-row sm:justify-between my-6'>
         <div className='flex items-center gap-4'>
           <SearchBar asset='stock' />
-          <p className='text-[0.688rem] text-[#8f8e87] hidden md:flex text-nowrap tracking-widest ml-1'>{stocks.length} assets</p>
+          <p className='text-[0.688rem] text-[#8f8e87] hidden sm:flex text-nowrap tracking-widest ml-1'>{stocks.length} assets</p>
         </div>
         <div className='flex items-center'>
-        <p className='text-[0.688rem] text-[#8f8e87] md:hidden tracking-widest ml-1'>{stocks.length} assets</p>
+        <p className='text-[0.688rem] text-[#8f8e87] sm:hidden tracking-widest ml-1'>{stocks.length} assets</p>
         <ReactPaginate
-          pageCount={Math.floor((stocks.length / 20)-1)}
+          pageCount={Math.floor((stocks.length / 20))}
           pageRangeDisplayed={3}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}
@@ -114,7 +114,7 @@ const StockList = () => {
 
       <div className='my-6  flex justify-center'>
         <ReactPaginate
-          pageCount={Math.floor((stocks.length / 20)-1)}
+          pageCount={Math.floor((stocks.length / 20))}
           pageRangeDisplayed={5}
           marginPagesDisplayed={1}
           onPageChange={handlePageClick}

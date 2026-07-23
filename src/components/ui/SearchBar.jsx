@@ -1,17 +1,13 @@
 import React from 'react'
 import { RiSearchLine } from "@remixicon/react";
 
-const SearchBar = (props) => {
+const SearchBar = () => {
   return (
-    <div className='flex items-center gap-2.5 w-full border border-white/11 bg-[#191a1b] transition-border duration-200 focus-within:border-gold/80 px-3.5 h-10.75'>
-      <RiSearchLine className='text-[#aaa9a2]' size={15} />
-      <input 
-        className='bg-transparent border-0 outline-none text-[#f4f0e8] w-full text-[13px] placeholder:text-[#85857e]' 
-        type="text" 
-        maxLength={30} 
-        placeholder={`Search ${props.asset}...`}
-      />
-  </div>
+    <div className='flex items-center w-full justify-center  gap-2.5 h-10.75 border border-white/11 bg-[#191a1b] px-3.5'>
+      <span className='w-1.5 h-1.5 rounded-full bg-gold shrink-0' />
+      <span className='text-[13px] text-[#f4f0e8] tracking-wide'>Top 20</span>
+      <span className='text-[#85857e] text-[13px]'>by market cap</span>
+    </div>
   )
 }
 

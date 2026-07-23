@@ -12,7 +12,7 @@ const HomeLower = () => {
 
         <div className='flex flex-col lg:flex-row lg:justify-between gap-3 px-2 '>
           <h1 className='text-5xl lg:text-6xl font-semibold font-display'>One place <br /> Every <span className='text-lightGold italic'>market.</span></h1>
-          <p className='text-sm text-[#9a9a94] leading-8 tracking-wide font-sans lg:max-w-80'>Navigate the big picture or zoom in on what matters. The market is vast; your view can be simple.</p>
+          <p className='text-sm text-[#9a9a94] leading-8 tracking-wide flex items-end font-sans lg:max-w-80'>Navigate the big picture or zoom in on what matters. The market is vast; your view can be simple.</p>
         </div>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-[60%_40%] gap-3.5 '>

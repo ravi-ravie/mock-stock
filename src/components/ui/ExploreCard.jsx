@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { RiArrowRightUpLongFill } from '@remixicon/react'
 
 const ExploreCard = (props) => {
   return (
@@ -11,7 +12,7 @@ const ExploreCard = (props) => {
         <div className='absolute left-6.5 bottom-6 flex flex-col gap-2 '>
           <p className='mb-1.25 font-mono text-[10px] uppercase tracking-[1.4px] text-lightGold '>{props.subtitle}</p>
           <p className='font-display font-semibold text-[42px] leading-none tracking-[-1.5px] mb-4'>{props.asset}</p>
-          <p className='text-xs text-[#d2d0c9]'>view {props.view}</p>
+          <p className='text-xs text-[#d2d0c9] flex gap-2'>view {props.view}<RiArrowRightUpLongFill size={12} className='text-gold' /></p>
         </div>
       </div>
     </Link>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { RiArrowRightUpLongFill, RiPlayFill } from '@remixicon/react'
+import { Link } from 'react-router-dom'
 
 const HomeUpper = () => {
     return (
@@ -15,9 +16,11 @@ const HomeUpper = () => {
 
                     <div className='flex flex-col items-start font-sans gap-4 sm:flex-row sm:flex-wrap'>
                         <button className='bg-gold text-black flex w-[90%]  justify-between py-3 px-3.5 tracking-[1.5px] rounded items-center hover:-translate-y-1 duration-200 text-xs 
-                    sm:w-fit sm:gap-4 '>Explore markets <RiArrowRightUpLongFill size={14} /></button>
-                        <button className='flex  justify-between py-3 px-3.5 tracking-[1.5px] rounded items-center w-[90%] border border-white/20 hover:-translate-y-1 duration-200 hover:bg-white/8 text-xs
-                    sm:w-fit sm:gap-4'>How it works <RiPlayFill size={14} color="rgba(215,174,103,1)" /></button>
+                    sm:w-fit sm:gap-4 ' onClick={()=>{window.scrollTo({top: window.innerHeight * 0.99 , behavior:'smooth'})}}>Explore markets <RiArrowRightUpLongFill size={14} /></button>
+                    <Link to='/projectinfo'>
+                            <button className='flex  justify-between py-3 px-3.5 tracking-[1.5px] rounded items-center w-[90%] border border-white/20 hover:-translate-y-1 duration-200 hover:bg-white/8 text-xs
+                        sm:w-fit sm:gap-4'>How it works <RiPlayFill size={14} color="rgba(215,174,103,1)" /></button>
+                     </Link>
                     </div>
                 </div>
 
@@ -34,7 +37,7 @@ const HomeUpper = () => {
                         <span className='h-20 w-px bg-gold'></span>
                         <div>
                             <p className='font-mono text-[9px] tracking-[1.1px] text-[#b3b2ab]'>CURATED ASSETS</p>
-                            <strong className='font-display font-semibold text-[27px] mt-1 mb-0.5 tracking-[-0.5px]'>18,000<small className='text-sm font-sans text-gold ml-0.5'>+</small></strong>
+                            <strong className='font-display font-semibold text-[27px] mt-1 mb-0.5 tracking-[-0.5px]'>5,000<small className='text-sm font-sans text-gold ml-0.5'>+</small></strong>
                             <p className='font-mono text-[9px] tracking-[2px] text-[#b3b2ab]'>Quality over quantity</p>
                         </div>
                     </div>
