@@ -1,6 +1,5 @@
 import React from 'react'
 import PageTopCard from '../components/ui/PageTopCard'
-import SearchBar from '../components/ui/SearchBar'
 import EtfList from '../components/data/EtfList'
 
 const ETF = () => {

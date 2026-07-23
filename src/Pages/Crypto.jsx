@@ -1,6 +1,5 @@
 import React from 'react'
 import PageTopCard from '../components/ui/PageTopCard'
-import SearchBar from '../components/ui/SearchBar'
 import CryptoList from '../components/data/CryptoList'
 
 const Crypto = () => {

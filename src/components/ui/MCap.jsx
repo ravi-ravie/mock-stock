@@ -1,7 +1,7 @@
 import React from 'react'
 import { RiSearchLine } from "@remixicon/react";
 
-const SearchBar = () => {
+const MCap = () => {
   return (
     <div className='flex items-center w-full justify-center  gap-2.5 h-10.75 border border-white/11 bg-[#191a1b] px-3.5'>
       <span className='w-1.5 h-1.5 rounded-full bg-gold shrink-0' />
@@ -11,4 +11,4 @@ const SearchBar = () => {
   )
 }
 
-export default SearchBar
+export default MCap

@@ -1,6 +1,5 @@
 import React from 'react'
 import PageTopCard from '../components/ui/PageTopCard'
-import SearchBar from '../components/ui/SearchBar'
 import StockList from '../components/data/StockList'
 
 const Stock = () => {

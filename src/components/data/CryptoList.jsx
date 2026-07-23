@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ReactPaginateModule from 'react-paginate';
-import SearchBar from '../ui/SearchBar';
+import MCap from '../ui/MCap';
 const ReactPaginate = ReactPaginateModule.default;
 
 
@@ -36,7 +36,7 @@ const CryptoList = () => {
 
       <div className='flex flex-col gap-6 sm:flex-row sm:justify-between my-6'>
         <div className='flex items-center gap-4'>
-          <SearchBar asset='stock' />
+          <MCap />
           <p className='text-[0.688rem] text-[#8f8e87] hidden sm:flex text-nowrap  tracking-widest ml-1'>15000+ assets</p>
         </div>
         <div className='flex items-center'>
