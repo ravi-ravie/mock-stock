@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { RiMenu4Fill } from "@remixicon/react";
 import Sidebar from './Sidebar';
 import { Link, useLocation } from 'react-router-dom';
+import cryptoImg from '../../assets/logoMockStock.png'
 
 
 const Navbar = () => {
