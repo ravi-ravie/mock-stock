@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ReactPaginateModule from 'react-paginate';
 const ReactPaginate = ReactPaginateModule.default;
-import stocks from "../data/stocks_1000.json";
+import stocks from "../data/Stocks_1000.json";
 import MCap from '../ui/MCap';
 
 const StockList = () => {
