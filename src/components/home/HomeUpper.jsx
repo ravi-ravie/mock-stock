@@ -17,7 +17,7 @@ const HomeUpper = () => {
                     <div className='flex flex-col items-start font-sans gap-4 sm:flex-row sm:flex-wrap'>
                         <button className='bg-gold text-black flex w-[90%]  justify-between py-3 px-3.5 tracking-[1.5px] rounded items-center hover:-translate-y-1 duration-200 text-xs 
                     sm:w-fit sm:gap-4 ' onClick={()=>{window.scrollTo({top: window.innerHeight * 0.99 , behavior:'smooth'})}}>Explore markets <RiArrowRightUpLongFill size={14} /></button>
-                    <Link to='/projectinfo'>
+                    <Link to='/projectinfo' className='w-full sm:w-fit'>
                             <button className='flex  justify-between py-3 px-3.5 tracking-[1.5px] rounded items-center w-[90%] border border-white/20 hover:-translate-y-1 duration-200 hover:bg-white/8 text-xs
                         sm:w-fit sm:gap-4'>How it works <RiPlayFill size={14} color="rgba(215,174,103,1)" /></button>
                      </Link>
